@@ -4,7 +4,20 @@
       <Example ref="msg" ></Example>
         <button @click="changeMessage">变化</button>
         <div v-linbin='color'>在这里directive</div>
-        <div>{{message|myFilter}}</div>
+        <div>{{message}},过滤后的值：{{message|myFilter}}</div>
+        <div :class="[{fontsize40:flag},flag?'classA':'classB']">这是class控制的</div>
+        <div  v-show="flag">flag:{{flag}}</div>
+        <button @click="changeColor">控制class</button>
+        <div :style="{color:activeColor,fontSize:fontSize+'px'}">绑定内联样式1</div>
+        <div :style="styleObj">绑定内联样式2</div>
+        <div :style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'],'justify-content':'center' }">多重值</div>
+        <myComponect post-title="color"></myComponect>
+
+        <ul>
+            <li v-for="item in items">
+                {{ item.message }}
+            </li>
+        </ul>
   </div>
 </template>
 
@@ -41,12 +54,29 @@ Vue.filter('myFilter', function (value) {
   return x
 })
 
+//组件注册
+Vue.component('myComponect',{
+    props:['postTitle'],
+    template:'<h3>{{postTitle}}</h3>'
+})
+
 export default {
   name: "directive",
   data() {
     return {
         color:'red',
-        message:"1.2.35.89"
+        message:"1.2.35.89",
+        flag:true,
+        activeColor:'pink',
+        fontSize:20,
+        styleObj:{
+            color:'pink',
+            fontSize:'20px'
+        },
+        items: [
+            { message: 'Foo' },
+            { message: 'Bar' }
+        ]
     };
   },
   components: {
@@ -72,6 +102,13 @@ export default {
     changeMessage(event) {
       console.log(this.$refs);
       this.$refs.msg.changeMsg();
+    },
+    changeColor(){
+        if(this.flag){
+            this.flag=false
+        }else{
+            this.flag=true
+        }
     }
   }
 };
@@ -79,4 +116,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+    .classA{
+        color:red;
+    }
+    .classB{
+        color:green;
+    }
+    .fontsize40{
+        font-size:40px;
+    }
 </style>

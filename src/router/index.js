@@ -19,8 +19,8 @@ export default new Router({
       component: Login
     },
     {
-      path: '/directive',
-      name: 'VueDirective',
+      path: '/',
+      name: 'directive',
       component: VueDirective
     }
   ]

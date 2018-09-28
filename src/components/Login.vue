@@ -4,7 +4,6 @@
       <el-header>
         <h3>Login in</h3>
       </el-header>
-
       <el-main>
         <el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="100px">
           <el-form-item label="用户名" prop="username">
