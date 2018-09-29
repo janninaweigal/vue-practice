@@ -1,16 +1,19 @@
 <template>
-  <div class="example">
-      {{msg}}
+  <div class="todo">
+      <li>
+          {{title}}
+          <button @click="$emit('remove')">Remove</button>
+      </li>
   </div>
 </template>
 
 <script>
-    
     export default {
-        name: 'example',
+        name: 'todo',
+        props:['title'],
         data(){
             return {
-                msg:'444'
+
             }
         },
         created(){

@@ -1,5 +1,5 @@
 <template>
-  <div class="example">
+  <div class="form">
       {{msg}}
   </div>
 </template>
@@ -7,7 +7,7 @@
 <script>
     
     export default {
-        name: 'example',
+        name: 'form',
         data(){
             return {
                 msg:'444'
