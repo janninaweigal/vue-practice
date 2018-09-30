@@ -5,12 +5,31 @@ import Login from '@/components/Login'
 import VueDirective from '@/examples/VueDirective'
 import Directive1 from '@/examples/VueDirecitive1'
 import Event from '@/examples/event'
-import Form from '@/examples/form'
+import vform from '@/examples/vform'
+import vprops from '@/examples/vprops'
+import vprops1 from '@/examples/vprops1'
+import vslot from '@/examples/vslot'
+import basecomponent from '@/examples/basecomponent'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/',
+      name: 'vslot',
+      component: vslot
+    },
+    {
+      path: '/vprops1',
+      name: 'vprops1',
+      component: vprops1
+    },
+    {
+      path: '/basecomponent',
+      name: 'basecomponent',
+      component: basecomponent
+    },
     {
       path: '/HelloWorld',
       name: 'HelloWorld',
@@ -37,9 +56,14 @@ export default new Router({
       component: Event
     },
     {
-      path: '/',
+      path: '/form',
       name: 'form',
-      component: Form
+      component: vform
+    },
+    {
+      path: '/vprops',
+      name: 'vprops',
+      component: vprops
     }
   ]
 })

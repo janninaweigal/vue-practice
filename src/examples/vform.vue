@@ -1,5 +1,5 @@
 <template>
-  <div class="form">
+  <div class="vform">
       {{msg}}
   </div>
 </template>
@@ -7,7 +7,7 @@
 <script>
     
     export default {
-        name: 'form',
+        name: 'vform',
         data(){
             return {
                 msg:'444'
