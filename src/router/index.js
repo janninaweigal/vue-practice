@@ -9,6 +9,7 @@ import vform from '@/examples/vform'
 import vprops from '@/examples/vprops'
 import vprops1 from '@/examples/vprops1'
 import vslot from '@/examples/vslot'
+import inumber from '@/examples/inputNumber'
 import basecomponent from '@/examples/basecomponent'
 
 Vue.use(Router)
@@ -64,6 +65,11 @@ export default new Router({
       path: '/vprops',
       name: 'vprops',
       component: vprops
+    },
+    {
+      path: '/inumber',
+      name: 'inumber',
+      component: inumber
     }
   ]
 })
